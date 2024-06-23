@@ -9,7 +9,6 @@ st.subheader('Plan your next trip with AI')
 
 # User input section in the sidebar
 st.sidebar.header('Enter details to generate a travel plan:')
-api_key = "AIzaSyBOtkTpO9dSa5hnwikzTlkATTu4imJlPCg"
 source = st.sidebar.text_input('Source', 'New York')
 destination = st.sidebar.text_input('Destination', 'Los Angeles')
 date_input = st.sidebar.date_input('Travel Start Date', min_value=date.today())
@@ -71,8 +70,9 @@ trip_details = {
 
 # Button to generate the travel plan
 if st.sidebar.button('Generate Travel Plan'):
-    if api_key and source and destination and date and budget and duration:
+    if source and destination and date and budget and duration:
         with st.spinner('Generating Travel Plan...'):
+            api_key = st.secrets["api_keys"]["google_api_key"]
             response = get_personalized_travel_plan(user_preferences, trip_details, api_key, selected_currency)
         st.success('Here is your personalized travel plan in ' + language_preference + ':')
         st.markdown(response)

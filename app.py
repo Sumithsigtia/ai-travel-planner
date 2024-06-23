@@ -9,15 +9,15 @@ st.subheader('Plan your next trip with AI')
 
 # User input section in the sidebar
 st.sidebar.header('Enter details to generate a travel plan:')
-source = st.sidebar.text_input('Source', 'New York')
-destination = st.sidebar.text_input('Destination', 'Los Angeles')
+source = st.sidebar.text_input('Source', 'India')
+destination = st.sidebar.text_input('Destination', 'USA')
 date_input = st.sidebar.date_input('Travel Start Date', min_value=date.today())
 date = date_input.strftime('%Y-%m-%d')
 budget = st.sidebar.number_input('Budget', min_value=100, value=1000, step=100)
 duration = st.sidebar.slider('Duration (days)', 1, 90, 7)
 
 # Currency selector
-currencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD']  # Add more currencies as needed
+currencies = [;INR','USD', 'EUR', 'GBP', 'JPY', 'AUD']  # Add more currencies as needed
 selected_currency = st.sidebar.selectbox('Select Currency', currencies)
 
 # Additional user preferences

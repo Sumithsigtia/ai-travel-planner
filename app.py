@@ -17,7 +17,7 @@ budget = st.sidebar.number_input('Budget', min_value=100, value=1000, step=100)
 duration = st.sidebar.slider('Duration (days)', 1, 90, 7)
 
 # Currency selector
-currencies = [;INR','USD', 'EUR', 'GBP', 'JPY', 'AUD']  # Add more currencies as needed
+currencies = ['INR','USD', 'EUR', 'GBP', 'JPY', 'AUD']  # Add more currencies as needed
 selected_currency = st.sidebar.selectbox('Select Currency', currencies)
 
 # Additional user preferences
